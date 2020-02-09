@@ -1,0 +1,28 @@
+WARNING: Ignored XML validation warning
+org.xml.sax.SAXParseException; lineNumber: 8; columnNumber: 71; schema_reference.4: Failed to read schema document 'http://www.springframework.org/schema/beans/spring-beans-5.0.xsd', because 1) could not find the document; 2) the document could not be read; 3) the root element of the document is not <xsd:schema>.
+
+
+
+
+
+If u get above exception u give wrong bean definition check in versions
+Give below def
+
+xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+   
+   
+   
+   Exception in thread "main" org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 5 in XML document from class path resource [Spring.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 5; columnNumber: 9; cvc-elt.1: Cannot find the declaration of element 'beans'.
+   
+   
+   
+   if u find above exception u didnt used definitions in bean xml
+   
+   
+   
+   WARNING: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'Vehical' defined in class path resource [Spring.xml]: Instantiation of bean failed; nested exception is java.lang.IllegalStateException: No bean class specified on bean definition
+   
+   if u get above exception u didnt give class in beans tag 
